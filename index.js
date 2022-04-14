@@ -7,8 +7,9 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const client = createClient({
-  host: "cache",
   port: 6379,
+  host: "redis" 
+
 });
 
 // expressJS config
@@ -35,14 +36,14 @@ try {
     console.log("Connection has been established successfully.");
 
     // connect Redis cache 
-    //await client.connect();
+   await client.connect();
 
     // set some data to cache just for test 
     const ROLES = {
       Admin: "Admin",
       Employee: "Employee",
     };
-    // await client.set('AUTH', JSON.stringify(ROLES));
+   await client.set('AUTH', JSON.stringify(ROLES));
 
     // routes
     require("./routes/authRoutes")(app);
@@ -55,7 +56,7 @@ try {
   console.error("Unable to connect to the database:", error);
 }
 
-app.get('/api' , (res,req) =>{
+app.get('/api' , (req,res) =>{
   res.status(200).send('Hello To Restaurant App')
 })
 

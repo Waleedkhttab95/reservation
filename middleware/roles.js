@@ -1,14 +1,15 @@
 // get the roles from RedisDB
 const { client } = require("../index");
 
-let ROLES = {
-  Admin: "Admin",
-  Employee: "Employee",
-};
+let ROLES 
 
-module.exports = ROLES;
+// Read from Cache
+ client.get('AUTH').then(result =>{
 
-//  client.get('AUTH').then(result =>{
+  ROLES = result
+  module.exports = ROLES;
 
-//      ROLES = JSON.parse(result)
-//  })
+ })
+
+
+
