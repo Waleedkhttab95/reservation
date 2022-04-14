@@ -31,7 +31,8 @@ npm run test
 
 ## Flow chart for reservation 
 
-![alt text](https://pasteboard.co/gwGwz7Q4FpU3.png)
+![This is an image](./reservation_Algo.drawio.png)
+
 
 
 ## WARNING
