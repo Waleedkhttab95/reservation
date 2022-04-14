@@ -19,6 +19,8 @@ exports.auth = (req, res, next) => {
 
 exports.role = (role) => {
   return (req, res, next) => {
+
+
     if (!role.includes(req.user.role)) {
       return res.status(401).send("you don't have permission ");
     }

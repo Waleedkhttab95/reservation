@@ -6,21 +6,21 @@ module.exports = (app) => {
   app.post(
     "/api/table",
     authMiddleWare.auth,
-    authMiddleWare.role([ROLES.Admin]),
+    authMiddleWare.role(['Admin']),
     tableServices.addNewTable
   );
 
   app.get(
     "/api/table",
     authMiddleWare.auth,
-    authMiddleWare.role([ROLES.Admin]),
+    authMiddleWare.role(['Admin']),
     tableServices.getAllTables
   );
 
   app.delete(
     "/api/table",
     authMiddleWare.auth,
-    authMiddleWare.role([ROLES.Admin]),
+    authMiddleWare.role(['Admin']),
     tableServices.deleteTable
   );
 };

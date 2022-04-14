@@ -5,13 +5,13 @@ const reservationServices = require("../services/reservationServices");
 module.exports = (app) => {
   app.get("/api/checkSlots",
   authMiddleWare.auth,
-  authMiddleWare.role([ROLES.Admin, ROLES.Employee]),
+  authMiddleWare.role(['Admin' , 'Employee']),
    reservationServices.checkSlots);
 
   app.post(
     "/api/reserve-time-slot",
     authMiddleWare.auth,
-    authMiddleWare.role([ROLES.Admin, ROLES.Employee]),
+    authMiddleWare.role(['Admin' , 'Employee']),
     reservationServices.reserveTimeSlot
   );
 
@@ -25,14 +25,14 @@ module.exports = (app) => {
   app.get(
     "/api/get-day-reservations",
     authMiddleWare.auth,
-    authMiddleWare.role([ROLES.Admin, ROLES.Employee]),
+    authMiddleWare.role(['Admin' , 'Employee']),
     reservationServices.getTodayReservations
   );
 
   app.delete(
     "/api/delete-reservation",
     authMiddleWare.auth,
-    authMiddleWare.role([ROLES.Employee, ROLES.Admin]),
+    authMiddleWare.role(['Admin' , 'Employee']),
     reservationServices.deleteReservation
   );
 };
