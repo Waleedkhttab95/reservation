@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "waleed",
+    "password": "123456",
+    "database": "resturantDB",
+    "host": "0.0.0.0",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "root",
+    "password": "123456",
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "root",
+    "password": "123456",
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
